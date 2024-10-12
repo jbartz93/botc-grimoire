@@ -1,0 +1,154 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  font-size: 24px;
+  font-weight: bold;
+  justify-content: space-around;
+  padding: 8px 32px;
+  width: calc(100% - 64px);
+}
+
+.townsfolk {
+  color: #1b70f7;
+}
+
+.outsiders {
+  color: #5794f7;
+}
+
+.minions {
+  color: #f57600;
+}
+
+.demon {
+  color: #db1818;
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.table {
+  background-color: darkgray;
+  border: 4px solid black;
+  border-radius: 4px;
+  margin: 10px 0;
+  width: 20%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.column.right {
+  flex-direction: column-reverse;
+}
+
+.player {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.right .player {
+  flex-direction: row-reverse;
+}
+
+.name {
+  border-bottom: 1px solid darkgray;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 5vh;
+  width: 20vw;
+}
+
+.left .name {
+  text-align: right;
+}
+
+.name:focus {
+  border-bottom: 1px solid #1b70f7;
+  outline: none;
+}
+
+.button {
+  align-items: baseline;
+  display: inline-flex;
+  margin: 0 12px;
+}
+
+.status, .traveller {
+  height: 4vh;
+  width: 4vh;
+}
+
+.occupied .status, .occupied .traveller {
+  cursor: pointer;
+}
+
+.icon {
+  height: 4vh;
+  width: 4vh;
+}
+
+.alive {
+  fill: #14a620;
+}
+
+.oneVote {
+  fill: #fa8d07;
+}
+
+.out {
+  fill: black;
+}
+
+.traveller .icon {
+  fill: #ccc;
+}
+
+.traveller.active .icon {
+  fill: #1b70f7;
+}
+
+.arrow {
+  fill: #606674;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.right .arrow {
+  transform: rotate(180deg);
+}
+
+.arrow.up, .button.traveller {
+  margin-right: 0;
+}
+
+.right .button.traveller {
+  margin-left: 0;
+  margin-right: 12px;
+}
+
+.player:hover .arrow {
+  visibility: visible;
+}
