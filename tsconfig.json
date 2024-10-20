@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "bin",
+    "target": "ES6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+  },
+  "include": [
+    "js/**/*",
+  ]
+}

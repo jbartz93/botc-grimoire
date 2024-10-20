@@ -1,6 +1,6 @@
-import {ArrowUp, ArrowDown} from './icons';
+import { ArrowUp, ArrowDown } from './icons';
 
-export function Grimoire({ rows }) {
+export function Grimoire({ rows }: { rows: number }) {
   return (
     <>
       <Header />
@@ -44,7 +44,7 @@ function Header() {
   );
 }
 
-function Table({ rows }) {
+function Table({ rows }: { rows: number }) {
   return (
     <div className="tableContainer">
       <Column players={rows} className="left"></Column>
@@ -54,7 +54,7 @@ function Table({ rows }) {
   );
 }
 
-function Column({ players, className }) {
+function Column({ players, className }: { players: number, className: string }) {
   const dom = [];
   for (let i = 0; i < players; i++) {
     dom.push(<div className="player">
