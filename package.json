@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-jsx": "^1.0.0",
     "ts-loader": "^9.5.1",

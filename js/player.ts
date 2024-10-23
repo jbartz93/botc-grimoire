@@ -1,9 +1,18 @@
 import { PLAYING_STATUSES, Status } from './status';
 
-class Player {
+export class Player {
   private name = '';
   private status = Status.NOT_PRESENT;
   private travelling = false;
+  private readonly index: number;
+
+  constructor(index: number) {
+    this.index = index;
+  }
+
+  getIndex() {
+    return this.index;
+  }
 
   isAlive() {
     return this.status == Status.ALIVE;
@@ -25,7 +34,7 @@ class Player {
     if (!this.isPlaying()) {
       return;
     }
-    this.setStatus(PLAYING_STATUSES[this.status + 1 % PLAYING_STATUSES.length]);
+    this.setStatus(PLAYING_STATUSES[(this.status + 1) % PLAYING_STATUSES.length]);
   }
 
   getStatus() {

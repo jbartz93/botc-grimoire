@@ -20,7 +20,7 @@ export function OneVote() {
 export function Dead() {
   return (
     <svg className="icon out" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -28,7 +28,7 @@ export function Dead() {
 export function ArrowUp() {
   return (
     <svg className="icon arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 5V19M12 5L6 11M12 5L18 11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 5V19M12 5L6 11M12 5L18 11" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -36,7 +36,7 @@ export function ArrowUp() {
 export function ArrowDown() {
   return (
     <svg className="icon arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 5V19M12 19L6 13M12 19L18 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12 5V19M12 19L6 13M12 19L18 13" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

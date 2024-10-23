@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -96,12 +97,14 @@ body {
   margin: 0 12px;
 }
 
-.status, .traveller {
+.status,
+.traveller {
   height: 4vh;
   width: 4vh;
 }
 
-.occupied .status, .occupied .traveller {
+.occupied .status,
+.occupied .traveller {
   cursor: pointer;
 }
 
@@ -119,7 +122,7 @@ body {
 }
 
 .out {
-  fill: black;
+  stroke: black;
 }
 
 .traveller .icon {
@@ -140,7 +143,8 @@ body {
   transform: rotate(180deg);
 }
 
-.arrow.up, .button.traveller {
+.arrow.up,
+.button.traveller {
   margin-right: 0;
 }
 
