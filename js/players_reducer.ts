@@ -2,20 +2,21 @@ import { Player } from './player';
 
 export interface PlayerAction {
   type: 'name' | 'travelling' | 'status'
-  index: number
+  id: string
   name?: string
 }
 
 export function playersReducer(players: Array<Player>, action: PlayerAction) {
+  const player = players.find(player => player.getId() == action.id);
   switch (action.type) {
     case 'name':
-      players[action.index].setName(action.name);
+      player.setName(action.name);
       return players.concat();
     case 'travelling':
-      players[action.index].setTravelling(!players[action.index].isTravelling());
+      player.setTravelling(!player.isTravelling());
       return players.concat();
     case 'status':
-      players[action.index].rotateStatus();
+      player.rotateStatus();
       return players.concat();
   }
 }

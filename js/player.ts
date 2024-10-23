@@ -4,14 +4,14 @@ export class Player {
   private name = '';
   private status = Status.NOT_PRESENT;
   private travelling = false;
-  private readonly index: number;
+  private readonly id: string;
 
-  constructor(index: number) {
-    this.index = index;
+  constructor(id: string) {
+    this.id = id;
   }
 
-  getIndex() {
-    return this.index;
+  getId() {
+    return this.id;
   }
 
   isAlive() {

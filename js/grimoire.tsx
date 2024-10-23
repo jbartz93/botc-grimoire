@@ -9,7 +9,7 @@ export function Grimoire({ rows }: { rows: number }) {
   const [players, dispatch] = useReducer(playersReducer, rows, (rows) => {
     const players = [];
     for (let i = 0; i < rows * 2; i++) {
-      players.push(new Player(i));
+      players.push(new Player(`p${i}`));
     }
     return players;
   })
@@ -76,22 +76,22 @@ function Table({ players, dispatch }: { players: Array<Player>, dispatch: React.
 function Column({ players, className, dispatch }: { players: Array<Player>, className: string, dispatch: React.Dispatch<PlayerAction> }) {
   const dom = [];
   for (let i = 0; i < players.length; i++) {
-    dom.push(<PlayerRow player={players[i]} dispatch={dispatch} key={players[i].getIndex()} />);
+    dom.push(<PlayerRow player={players[i]} dispatch={dispatch} key={players[i].getId()} />);
   }
   return <div className={"column " + className}>{dom}</div>;
 }
 
 function PlayerRow({ player, dispatch }: { player: Player, dispatch: React.Dispatch<PlayerAction> }) {
   function changeName(e: ChangeEvent) {
-    dispatch({ type: 'name', index: player.getIndex(), name: (e.target as HTMLInputElement).value });
+    dispatch({ type: 'name', id: player.getId(), name: (e.target as HTMLInputElement).value });
   }
 
   function changeStatus() {
-    dispatch({ type: 'status', index: player.getIndex() });
+    dispatch({ type: 'status', id: player.getId() });
   }
 
   function changeTravelling() {
-    dispatch({ type: 'travelling', index: player.getIndex() });
+    dispatch({ type: 'travelling', id: player.getId() });
   }
 
   const activeTraveller = player.isTravelling() ? ' active' : '';
