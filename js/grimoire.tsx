@@ -94,10 +94,18 @@ function PlayerRow({ player, dispatch }: { player: Player, dispatch: React.Dispa
     dispatch({ type: 'travelling', id: player.getId() });
   }
 
+  function swapUp() {
+    dispatch({ type: 'up', id: player.getId() });
+  }
+
+  function swapDown() {
+    dispatch({ type: 'down', id: player.getId() });
+  }
+
   const activeTraveller = player.isTravelling() ? ' active' : '';
   return (<div className={player.isPlaying() ? "player occupied" : "player"}>
-    <div className="button arrow up"><ArrowUp /></div>
-    <div className="button arrow down"><ArrowDown /></div>
+    <div className="button arrow up" onClick={swapUp}><ArrowUp /></div>
+    <div className="button arrow down" onClick={swapDown}><ArrowDown /></div>
     <input type="text" value={player.getName()} className="name" onChange={changeName} />
     <div className={"button traveller" + activeTraveller} onClick={changeTravelling}>
       {player.isPlaying() && (<Traveller />)}

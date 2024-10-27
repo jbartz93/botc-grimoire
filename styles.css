@@ -134,18 +134,22 @@ body {
 }
 
 .arrow {
-  fill: #606674;
+  stroke: #606674;
   cursor: pointer;
   visibility: hidden;
 }
 
-.right .arrow {
+.right .arrow .icon {
   transform: rotate(180deg);
 }
 
 .arrow.up,
 .button.traveller {
   margin-right: 0;
+}
+
+.right .arrow.up {
+  margin-left: 0;
 }
 
 .right .button.traveller {
