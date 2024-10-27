@@ -1,4 +1,4 @@
-import { Alive, ArrowUp, ArrowDown, Dead, OneVote, Traveller } from './icons';
+import { Alive, ArrowUp, ArrowDown, Dead, OneVote, Reset, Traveller } from './icons';
 import { ChangeEvent, useReducer } from 'react';
 import { calculateTypes } from './player_types';
 import { PlayerAction, playersReducer } from './players_reducer';
@@ -62,12 +62,19 @@ function Header({ players }: { players: Array<Player> }) {
 }
 
 function Table({ players, dispatch }: { players: Array<Player>, dispatch: React.Dispatch<PlayerAction> }) {
+  function resetPlayers() {
+    dispatch({ type: 'reset' });
+  }
   const leftPlayers = players.slice(0, players.length / 2);
   const rightPlayers = players.slice(players.length / 2);
   return (
     <div className="tableContainer">
       <Column players={leftPlayers} dispatch={dispatch} className="left"></Column>
-      <div className="table"></div>
+      <div className="table">
+        <div className="tableButtons">
+          <div className="button reset" onClick={resetPlayers}><Reset /></div>
+        </div>
+      </div>
       <Column players={rightPlayers} dispatch={dispatch} className="right"></Column>
     </div>
   );

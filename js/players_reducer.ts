@@ -1,12 +1,22 @@
 import { Player } from './player';
+import { Status } from './status';
 
 export interface PlayerAction {
-  type: 'name' | 'travelling' | 'status' | 'up' | 'down'
-  id: string
+  type: 'name' | 'travelling' | 'status' | 'up' | 'down' | 'reset'
+  id?: string
   name?: string
 }
 
 export function playersReducer(players: Array<Player>, action: PlayerAction) {
+  if (action.type == 'reset') {
+    players.forEach(player => {
+      if (player.getStatus() != Status.NOT_PRESENT) {
+        player.setStatus(Status.ALIVE);
+      }
+      player.setTravelling(false);
+    });
+    return players.concat();
+  }
   const playerIndex = players.findIndex(player => player.getId() == action.id);
   const player = players[playerIndex];
   switch (action.type) {
